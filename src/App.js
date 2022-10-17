@@ -1,7 +1,9 @@
+import { MainWrapper } from "./styled";
+
 function App() {
   return (
     <div className="App">
-      <p>Example text</p>
+      <MainWrapper />
     </div>
   );
 }
