@@ -13,4 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         font-family: 'Oswald', sans-serif;
     }
+
+    .App {
+        display: flex;
+        justify-content: center;
+    }
 `;
