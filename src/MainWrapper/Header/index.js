@@ -1,4 +1,5 @@
 import { Container } from "./Container";
+import { DateContainer } from "./DateContainer";
 import { CitiesItem, CitiesList, UserCities, Wrapper } from "./styled";
 
 export const Header = () => (
@@ -25,9 +26,6 @@ export const Header = () => (
         </UserCities>
 
         <Container />
-
-        <div className="dateContainer">
-            <p className="date"></p>
-        </div>
+        <DateContainer />
     </Wrapper>
 );
