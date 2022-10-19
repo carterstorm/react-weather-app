@@ -10,7 +10,11 @@ export const PlaceWeatherInformation = () => (
             <WeatherImage></WeatherImage>
             <TemperatureElement>34°</TemperatureElement>
             <div>
-                <WeatherItem url={thermometer} />
+                <WeatherItem
+                    url={thermometer}
+                    text={"Odczuwalna temperatura"}
+                    data={"30"}
+                />
                 <WeatherItem />
                 <WeatherItem />
             </div>
