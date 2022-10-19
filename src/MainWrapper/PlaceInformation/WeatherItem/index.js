@@ -1,6 +1,6 @@
-export const WeatherItem = () => (
+export const WeatherItem = ({ url }) => (
     <>
-        <span></span>
+        <img alt="thermometer" src={url}></img>
         <p></p>
         <span></span>
     </>
