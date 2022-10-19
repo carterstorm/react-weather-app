@@ -9,7 +9,7 @@ export const Header = () => (
                 Londyn
             </CitiesItem>
             <CitiesItem>
-                Paryz
+                Paryż
             </CitiesItem>
             <CitiesItem>
                 Warszawa
