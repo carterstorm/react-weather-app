@@ -15,6 +15,8 @@ export const CitySearchInput = styled.input`
     height: 30px;
     margin-right: 10px;
     padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid black;
 `;
 
 export const TemperatureButtons = styled.div`
