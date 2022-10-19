@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
 
 export const Location = styled.div`
     display: flex;
-    background-color: red;
 `;
 
 export const CitySearchInput = styled.input`
