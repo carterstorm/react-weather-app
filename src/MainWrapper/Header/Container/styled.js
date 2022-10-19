@@ -13,6 +13,5 @@ export const CitySearchInput = styled.input`
     min-width: 300px;
 `;
 
-export const TemperatureButtons = styled.div``
-
-    ;
+export const TemperatureButtons = styled.div`
+`;

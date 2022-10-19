@@ -6,12 +6,21 @@ export const Container = () => {
         <Wrapper>
             <Location>
                 <CitySearchInput />
-                <Button />
-                <Button />
+                <Button content=
+                    {
+                        <span className="material-symbols-outlined">search</span>
+                    }
+                />
+                <Button content=
+                    {
+                        <span className="material-symbols-outlined">location_on</span>
+                    }
+                />
             </Location>
             <TemperatureButtons>
-                <Button />
-                <Button />
+                <Button content={"°C"} />
+                {"|"}
+                <Button content={"°F"} />
             </TemperatureButtons>
         </Wrapper >
     )
