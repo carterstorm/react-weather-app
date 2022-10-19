@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
-    border-bottom: 1px solid black;
+    padding: 0 20px;
 `;
 
 export const CitiesList = styled.ul`
