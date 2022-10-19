@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
-
-`;
-
-export const UserCities = styled.div`
-    
+    border-bottom: 1px solid black;
 `;
 
 export const CitiesList = styled.ul`
