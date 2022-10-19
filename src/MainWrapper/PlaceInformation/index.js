@@ -1,4 +1,5 @@
 import { TemperatureElement, WeatherImage, WeatherInformation, Wrapper } from "./styled";
+import { WeatherItem } from "./WeatherItem";
 
 export const PlaceWeatherInformation = () => (
     <Wrapper>
@@ -8,21 +9,9 @@ export const PlaceWeatherInformation = () => (
             <WeatherImage></WeatherImage>
             <TemperatureElement>34°</TemperatureElement>
             <div>
-                <div>
-                    <span></span>
-                    <p></p>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <p></p>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <p></p>
-                    <span></span>
-                </div>
+                <WeatherItem />
+                <WeatherItem />
+                <WeatherItem />
             </div>
         </WeatherInformation>
     </Wrapper>
