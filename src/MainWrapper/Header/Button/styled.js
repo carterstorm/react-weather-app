@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
+    display: flex;
+    align-items: center;
     background-color: transparent;
     border: none;
-`;
-
-export const Content = styled.span`
-    font-size: 20px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 18px;
 `;
