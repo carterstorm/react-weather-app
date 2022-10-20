@@ -1,9 +1,19 @@
-import { StyledButton } from "./styled";
+import { StyledButton, ImageButton, TextButton } from "./styled";
 
-export const Button = ({ content }) => {
+export const Button = ({ img, content }) => {
+
+    if (content) {
+        return (
+            <StyledButton>
+                <TextButton>{content}</TextButton>
+            </StyledButton>
+        )
+    }
+
     return (
         <StyledButton>
-            {content}
+            <ImageButton src={img} />
         </StyledButton>
     )
+
 };
