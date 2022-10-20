@@ -1,6 +1,6 @@
 import { TemperatureElement, WeatherImage, WeatherInformation, Wrapper } from "./styled";
 import { WeatherItem } from "./WeatherItem";
-import thermometer from "../../svg/thermometer.svg"
+import thermometer from "../../svg/thermometer.svg";
 
 export const PlaceWeatherInformation = () => (
     <Wrapper>
