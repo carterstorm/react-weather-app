@@ -10,6 +10,11 @@ export const Place = styled.p`
     font-size: 40px;
 `;
 
+export const SkyInfo = styled.p`
+    font-size: 20px;
+    margin: 0 0 20px 0;
+`;
+
 export const WeatherInformation = styled.div`
     display: flex;
     align-items: center;
