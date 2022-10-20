@@ -6,6 +6,10 @@ export const Wrapper = styled.section`
     align-items: center;
 `;
 
+export const Place = styled.p`
+    font-size: 40px;
+`;
+
 export const WeatherInformation = styled.div`
     display: flex;
     align-items: center;

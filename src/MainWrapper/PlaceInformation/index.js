@@ -1,4 +1,4 @@
-import { TemperatureElement, WeatherImage, WeatherInformation, Wrapper } from "./styled";
+import { Place, TemperatureElement, WeatherImage, WeatherInformation, Wrapper } from "./styled";
 import { WeatherItem } from "./WeatherItem";
 import thermometer from "../../svg/thermometer.svg";
 import humidity_low from "../../svg/humidity_low.svg";
@@ -6,7 +6,7 @@ import wind from "../../svg/wind.svg";
 
 export const PlaceWeatherInformation = () => (
     <Wrapper>
-        <p>Kraków</p>
+        <Place>Kraków</Place>
         <p>Pochmurno</p>
         <WeatherInformation>
             <WeatherImage></WeatherImage>
@@ -29,5 +29,6 @@ export const PlaceWeatherInformation = () => (
                 />
             </div>
         </WeatherInformation>
+
     </Wrapper>
 );
