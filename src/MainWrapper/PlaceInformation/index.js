@@ -1,3 +1,4 @@
+import { AdditionalWeatherInformation } from "./AdditionalWeatherInformation";
 import { Place, SkyInfo, WeatherImage, WeatherInformation, WeatherTemperature, Wrapper } from "./styled";
 import { WeatherBasicInformation } from "./WeatherBasicInformation";
 
@@ -10,5 +11,6 @@ export const PlaceWeatherInformation = () => (
             <WeatherTemperature>34°</WeatherTemperature>
             <WeatherBasicInformation />
         </WeatherInformation>
+        <AdditionalWeatherInformation />
     </Wrapper>
 );
