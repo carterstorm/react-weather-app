@@ -8,17 +8,17 @@ export const WeatherBasicInformation = () => (
     <Wrapper>
         <WeatherItem
             url={thermometer}
-            text={"Odczuwalna temperatura"}
+            text={"Odczuwalna temperatura:"}
             data={"30"}
         />
         <WeatherItem
             url={humidity_low}
-            text={"Wilgotność"}
+            text={"Wilgotność:"}
             data={"12%"}
         />
         <WeatherItem
             url={wind}
-            text={"Prędkość wiatru"}
+            text={"Prędkość wiatru:"}
             data={"12 km/h"}
         />
     </Wrapper>
