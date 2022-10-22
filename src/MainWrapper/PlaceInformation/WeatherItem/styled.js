@@ -12,9 +12,8 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.p`
-    width: 150px;
     font-size: 14px;
-    margin: 0;
+    margin: 0 10px 0 0;
 `;
 
 export const Data = styled.span`
