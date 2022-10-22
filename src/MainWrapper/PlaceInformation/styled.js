@@ -29,6 +29,6 @@ export const WeatherImage = styled.div`
     border-radius: 50%;
 `;
 
-export const TemperatureElement = styled.p`
+export const WeatherTemperature = styled.p`
     font-size: 40px;
 `;
