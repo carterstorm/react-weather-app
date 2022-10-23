@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
 `;
 
-export const Location = styled.div`
+export const Location = styled.form`
     display: flex;
     align-items: center;
 `;
