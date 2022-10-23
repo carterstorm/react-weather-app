@@ -1,5 +1,10 @@
-export const Forecast = () => (
-    <footer>
+import { Heading, Wrapper } from "./styled";
 
-    </footer>
+export const Forecast = () => (
+    <Wrapper>
+        <Heading>hourly forecast</Heading>
+        <div>
+
+        </div>
+    </Wrapper>
 ); 
