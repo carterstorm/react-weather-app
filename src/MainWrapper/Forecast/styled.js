@@ -11,3 +11,15 @@ export const Heading = styled.h1`
     margin: 0;
     border-bottom: 1px solid black;
 `;
+
+export const ForecastItem = styled.div`
+`;
+
+export const Time = styled.p`
+`;
+
+export const WeatherImage = styled.img`
+`;
+
+export const Temperature = styled.p`
+`;
