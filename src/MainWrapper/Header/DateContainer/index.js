@@ -1,8 +1,25 @@
 import { Wrapper } from "./styled";
 import { Date } from "./styled";
+import { useDate } from "./useDate";
 
-export const DateContainer = () => (
-    <Wrapper>
-        <Date>Wtorek, 18.10.2022, Godzina: 21:20</Date>
-    </Wrapper>
-);   
+export const DateContainer = () => {
+    const date = useDate();
+
+    return (
+        <Wrapper>
+            <Date>
+                Dzisiaj jest
+                {" "}
+                {date.toLocaleDateString("pl-PL", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                    second: "numeric",
+                })}
+            </Date>
+        </Wrapper>
+    );
+};
