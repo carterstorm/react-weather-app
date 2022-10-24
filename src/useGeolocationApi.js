@@ -1,9 +1,9 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API_KEY } from "./apiKey";
 
 const GEO_API_BASE_URL = "http://api.openweathermap.org/geo/1.0/direct?";
-const API_KEY = "5fb98d393480921290c1663a251e6493";
 const city = "Warsaw"
 
 export const useGeolocation = () => {
