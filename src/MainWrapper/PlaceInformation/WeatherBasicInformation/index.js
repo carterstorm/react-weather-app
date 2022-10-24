@@ -19,7 +19,7 @@ export const WeatherBasicInformation = () => (
         <WeatherItem
             url={wind}
             text={"Prędkość wiatru:"}
-            data={"12 km/h"}
+            data={"12 m/s"}
         />
     </Wrapper>
 );
