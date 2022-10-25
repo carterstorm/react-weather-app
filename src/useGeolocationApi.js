@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { API_KEY } from "./apiKey";
 
 const GEO_API_BASE_URL = "http://api.openweathermap.org/geo/1.0/direct?";
-const city = "Warsaw"
+const city = "Warsaw";
 
 export const useGeolocation = () => {
     const [locationData, setApiData] = useState({
