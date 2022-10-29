@@ -4,6 +4,7 @@ import searchImage from "../../../svg/search.svg";
 import location from "../../../svg/location.svg";
 import { SearchInput, StyledLocationSearch } from "./styled";
 import { Button } from "../Button";
+import { getLocationApi } from "../../../getLocationApi";
 
 export const LocationSearch = () => {
 
@@ -11,6 +12,7 @@ export const LocationSearch = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        getLocationApi(search);
     };
 
     const onInputChange = (event) => {
