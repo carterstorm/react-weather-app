@@ -1,10 +1,9 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { API_KEY } from "./apiKey";
 
 const GEO_API_BASE_URL = "http://api.openweathermap.org/geo/1.0/direct?";
-const city = "Warsaw";
+const city = "London";
 
 export const useGeolocation = () => {
     const [locationData, setApiData] = useState({
@@ -14,14 +13,12 @@ export const useGeolocation = () => {
     useEffect(() => {
         const getLocation = async () => {
             try {
-                const response = await axios.get(`${GEO_API_BASE_URL}q=${city}&limit=5&appid=${API_KEY}`);
-                const lat = response.data[0].lat;
-                const lon = response.data[0].lon;
+                const response = await axios.get(`${GEO_API_BASE_URL}q=${city}&limit=5&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6`);
+                console.log(response.data);
 
                 setApiData({
                     state: "succes",
-                    latitude: lat,
-                    longitude: lon,
+
                 });
             } catch {
                 setApiData({
