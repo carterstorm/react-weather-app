@@ -6,8 +6,12 @@ import { Button } from "../Button";
 
 export const LocationSearch = () => {
 
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    };
+
     return (
-        <StyledLocationSearch>
+        <StyledLocationSearch onSubmit={onFormSubmit}>
             <SearchInput />
             <Button img={searchImage} />
             <Button img={location} />
