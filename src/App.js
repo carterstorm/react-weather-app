@@ -19,6 +19,7 @@ function App() {
 
 	const [cities, setCities] = useState(null);
 
+
 	useEffect(() => {
 		const getLocationApi = async () => {
 			try {
