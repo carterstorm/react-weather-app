@@ -1,6 +1,6 @@
-import searchImage from "./svg/search.svg";
-import locationImage from "./svg/location.svg";
+
 import { DateContainer } from "./MainWrapper/DateContainer";
+import { LocationSearch } from "./MainWrapper/LocationSearch";
 
 import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
@@ -10,9 +10,7 @@ import {
 	CitiesList,
 	Container,
 	Header,
-	LocationSearch,
 	MainWrapper,
-	SearchInput,
 	TemperatureButtons
 } from "./MainWrapper/styled";
 
@@ -41,11 +39,7 @@ function App() {
 						</CitiesItem>
 					</CitiesList>
 					<Container>
-						<LocationSearch>
-							<SearchInput />
-							<Button img={searchImage} />
-							<Button img={locationImage} />
-						</LocationSearch>
+						<LocationSearch />
 						<TemperatureButtons>
 							<Button content={"°C"} />
 							{"|"}
