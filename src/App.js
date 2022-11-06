@@ -15,8 +15,6 @@ import {
 	TemperatureButtons
 } from "./MainWrapper/styled";
 
-
-
 function App() {
 
 	const [cities, setCities] = useState(null);

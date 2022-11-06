@@ -49,3 +49,15 @@ export const SelectItem = styled.li`
         background-color: rgb(200, 200, 200);
     }
 `;
+
+export const Input = styled.input`
+    display: inline-block;
+    width: 100%;
+    border: none;
+    padding: 10px 10px 10px 20px;
+    font-weight: 400;
+
+    &:focus{
+        outline: none;
+    }
+`;
