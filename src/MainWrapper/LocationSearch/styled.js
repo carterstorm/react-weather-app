@@ -38,7 +38,6 @@ export const SelectList = styled.ul`
     list-style: none;
     overflow-y: auto;
     background-color: white;
-    
 `;
 
 export const SelectItem = styled.li`
@@ -56,6 +55,8 @@ export const Input = styled.input`
     border: none;
     padding: 10px 10px 10px 20px;
     font-weight: 400;
+    position: sticky;
+    top: 0;
 
     &:focus{
         outline: none;
