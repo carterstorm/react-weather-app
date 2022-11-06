@@ -24,7 +24,7 @@ export const SearchContainer = styled.div`
 `;
 
 export const SelectList = styled.ul`
-    display: none;
+    /* display: none; */
     margin: 0;
     padding: 0;
     position: absolute;
@@ -35,4 +35,17 @@ export const SelectList = styled.ul`
     z-index: 1;
     border: 1px solid black;
     border-radius: 5px;
+    list-style: none;
+    overflow-y: auto;
+    background-color: white;
+    
+`;
+
+export const SelectItem = styled.li`
+    padding: 10px 10px 10px 20px;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+        background-color: rgb(200, 200, 200);
+    }
 `;
