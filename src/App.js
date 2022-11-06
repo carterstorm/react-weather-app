@@ -13,9 +13,23 @@ import {
 	MainWrapper,
 	TemperatureButtons
 } from "./MainWrapper/styled";
+import { useEffect } from "react";
+import axios from "axios";
 
 
 function App() {
+
+	useEffect(() => {
+		const getLocationApi = async () => {
+			try {
+				const response = await axios.get(`http://api.weatherapi.com/v1/search.json?key=131dcfb91d6d4b0da9d123040220511&q=Lon`);
+				console.log(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		setTimeout(getLocationApi, 1 * 1000);
+	}, [])
 
 	return (
 		<div className="App">
