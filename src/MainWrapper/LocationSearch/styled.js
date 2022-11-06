@@ -1,15 +1,38 @@
 import styled from "styled-components";
 
 export const StyledLocationSearch = styled.form`
+    width: 100%;
     display: flex;
     align-items: center;
 `;
 
-export const SearchInput = styled.input`
-    min-width: 400px;
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+`;
+
+export const SearchContainer = styled.div`
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
     height: 30px;
-    margin-right: 10px;
-    padding: 0 10px;
-    border-radius: 5px;
     border: 1px solid black;
+    border-radius: 5px;
+`;
+
+export const SelectList = styled.ul`
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 400px;
+    height: 20vh;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 5px;
 `;
