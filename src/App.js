@@ -23,7 +23,7 @@ function App() {
 	useEffect(() => {
 		const getLocationApi = async () => {
 			try {
-				const response = await axios.get(`http://api.weatherapi.com/v1/search.json?key=131dcfb91d6d4b0da9d123040220511&q=Lon`);
+				const response = await axios.get(`https://api.weatherapi.com/v1/search.json?key=131dcfb91d6d4b0da9d123040220511&q=Lon`);
 				setCities(response.data);
 			} catch (error) {
 				console.error(error);
