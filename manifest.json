@@ -1,0 +1,9 @@
+{
+  "short_name": "React-Weather-app",
+  "name": "React-Weather-app",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

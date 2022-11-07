@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-weather-app/static/css/main.58462fbc.css",
+    "main.js": "/react-weather-app/static/js/main.683c24d8.js",
+    "static/media/sunrise.svg": "/react-weather-app/static/media/sunrise.d7982047e89eb98bfae0cd208bca1422.svg",
+    "static/media/rainy.svg": "/react-weather-app/static/media/rainy.abdf364a35fd36d315763bee53e58853.svg",
+    "static/media/wind.svg": "/react-weather-app/static/media/wind.fae3766295bf02298f437eeecf4ebc56.svg",
+    "index.html": "/react-weather-app/index.html",
+    "static/media/min_temp.svg": "/react-weather-app/static/media/min_temp.000f252c9eeb981a15f923459cc69a52.svg",
+    "static/media/thermometer.svg": "/react-weather-app/static/media/thermometer.2fb98d44d81f7473cba9c3d9bf4bad76.svg",
+    "static/media/location.svg": "/react-weather-app/static/media/location.f35d8055200db55e791b9d4c15d5e2ef.svg",
+    "static/media/search.svg": "/react-weather-app/static/media/search.0f3c9611018fae4e3f8708acde4ef3fa.svg",
+    "static/media/humidity_low.svg": "/react-weather-app/static/media/humidity_low.5fde021cce085d06a63f02ea6e34281b.svg",
+    "static/media/max_temp.svg": "/react-weather-app/static/media/max_temp.8c0418ef3a31ed42b3f572d44df86af2.svg",
+    "static/media/sunset.svg": "/react-weather-app/static/media/sunset.f36dff7f9347cbf990cf81a3b15793f2.svg",
+    "main.58462fbc.css.map": "/react-weather-app/static/css/main.58462fbc.css.map",
+    "main.683c24d8.js.map": "/react-weather-app/static/js/main.683c24d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.683c24d8.js"
+  ]
+}
