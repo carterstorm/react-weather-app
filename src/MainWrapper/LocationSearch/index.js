@@ -20,7 +20,7 @@ export const LocationSearch = ({ cities }) => {
         <StyledLocationSearch>
             <Container>
                 <SearchContainer>
-                    {selectCity}
+                    {selectCity ? selectCity : "Wybierz miasto"}
                 </SearchContainer>
                 <SelectList>
                     <Input
