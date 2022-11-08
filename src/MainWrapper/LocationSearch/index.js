@@ -20,7 +20,7 @@ export const LocationSearch = ({ cities }) => {
         <StyledLocationSearch>
             <Container>
                 <SearchContainer>
-                    Wybierz miasto
+                    {selectCity}
                 </SearchContainer>
                 <SelectList>
                     <Input
@@ -31,7 +31,9 @@ export const LocationSearch = ({ cities }) => {
                     {!!cities && cities.map(city => (
                         <SelectItem
                             hidden={!city.name.startsWith(inputValue)}
-                            key={city.id}>{city.name}
+                            key={city.id}
+                            onClick={() => (city.name !== selectCity ? setSelectCity(city.name) : null)}
+                        >{city.name}
                         </SelectItem>
                     ))}
                 </SelectList>
