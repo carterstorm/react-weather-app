@@ -14,6 +14,7 @@ import { Button } from "../Button";
 export const LocationSearch = ({ cities }) => {
 
     const [inputValue, setInputValue] = useState("");
+    const [selectCity, setSelectCity] = useState("");
 
     return (
         <StyledLocationSearch>
