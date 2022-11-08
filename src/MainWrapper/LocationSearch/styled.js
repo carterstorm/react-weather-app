@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledLocationSearch = styled.form`
     width: 100%;
@@ -31,7 +31,8 @@ export const SelectList = styled.ul`
     top: 35px;
     left: 0;
     width: 400px;
-    height: 20vh;
+    height: auto;
+    max-height: 200px;
     z-index: 1;
     border: 1px solid black;
     border-radius: 5px;
@@ -47,6 +48,10 @@ export const SelectItem = styled.li`
     &:hover {
         background-color: rgb(200, 200, 200);
     }
+
+     ${({ hidden }) => hidden && css`
+        display: hidden;
+    `};
 `;
 
 export const Input = styled.input`

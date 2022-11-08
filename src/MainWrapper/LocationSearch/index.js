@@ -25,10 +25,13 @@ export const LocationSearch = ({ cities }) => {
                     <Input
                         placeholder="Szukaj miasta"
                         value={inputValue}
-                        onChange={({ target }) => setInputValue(target.value.toLowerCase())}
+                        onChange={({ target }) => setInputValue(target.value)}
                     />
                     {!!cities && cities.map(city => (
-                        <SelectItem key={city.id}>{city.name}</SelectItem>
+                        <SelectItem
+                            hidden={!city.name.startsWith(inputValue)}
+                            key={city.id}>{city.name}
+                        </SelectItem>
                     ))}
                 </SelectList>
             </Container>
