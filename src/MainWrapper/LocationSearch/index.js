@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import searchImage from "../../svg/search.svg";
 import locationImage from "../../svg/location.svg";
 import {
@@ -15,7 +15,7 @@ export const LocationSearch = ({ cities }) => {
 
     const [inputValue, setInputValue] = useState("");
     const [selectCity, setSelectCity] = useState("");
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
         <StyledLocationSearch>
