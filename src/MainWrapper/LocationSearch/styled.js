@@ -39,6 +39,10 @@ export const SelectList = styled.ul`
     list-style: none;
     overflow-y: auto;
     background-color: white;
+
+    ${({ open }) => open && css`
+        display: none;
+    `};
 `;
 
 export const SelectItem = styled.li`

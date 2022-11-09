@@ -15,14 +15,15 @@ export const LocationSearch = ({ cities }) => {
 
     const [inputValue, setInputValue] = useState("");
     const [selectCity, setSelectCity] = useState("");
+    const [open, setOpen] = useState(false);
 
     return (
         <StyledLocationSearch>
             <Container>
-                <SearchContainer>
+                <SearchContainer onClick={() => setOpen(!open)}>
                     {selectCity ? selectCity : "Wybierz miasto"}
                 </SearchContainer>
-                <SelectList>
+                <SelectList open={open}>
                     <Input
                         placeholder="Szukaj miasta"
                         value={inputValue}
