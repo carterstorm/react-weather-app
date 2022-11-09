@@ -33,6 +33,7 @@ export const LocationSearch = ({ cities }) => {
                             hidden={!city.name.startsWith(inputValue)}
                             key={city.id}
                             onClick={() => (city.name !== selectCity ? setSelectCity(city.name) : null)}
+                            active={city.name === selectCity}
                         >{city.name}
                         </SelectItem>
                     ))}

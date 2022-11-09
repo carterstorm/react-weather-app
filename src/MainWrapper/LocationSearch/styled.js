@@ -52,6 +52,10 @@ export const SelectItem = styled.li`
      ${({ hidden }) => hidden && css`
         display: hidden;
     `};
+
+    ${({ active }) => active && css`
+        background-color: rgb(180, 190, 200);
+    `};
 `;
 
 export const Input = styled.input`
