@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import searchImage from "../../svg/search.svg";
 import locationImage from "../../svg/location.svg";
 import {
@@ -20,10 +20,14 @@ export const LocationSearch = ({ cities }) => {
     return (
         <StyledLocationSearch>
             <Container>
-                <SearchContainer onClick={() => setOpen(!open)}>
+                <SearchContainer
+                    onClick={() => setOpen(!open)}
+                >
                     {selectCity ? selectCity : "Wybierz miasto"}
                 </SearchContainer>
-                <SelectList open={open}>
+                <SelectList
+                    open={open}
+                >
                     <Input
                         placeholder="Szukaj miasta"
                         value={inputValue}
@@ -35,15 +39,17 @@ export const LocationSearch = ({ cities }) => {
                             key={city.id}
                             onClick={() => (city.name !== selectCity ? setSelectCity(city.name) : null)}
                             active={city.name === selectCity}
-                        >{city.name}
+                        >
+                            {city.name}
                         </SelectItem>
                     ))}
                 </SelectList>
             </Container>
 
-            <Button img={searchImage} />
-            <Button img={locationImage} />
+            <Button
+                img={searchImage} />
+            <Button
+                img={locationImage} />
         </StyledLocationSearch>
     )
-
 };
