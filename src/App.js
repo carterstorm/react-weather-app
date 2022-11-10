@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
 
@@ -16,20 +14,6 @@ import {
 } from "./MainWrapper/styled";
 
 function App() {
-
-	const [cities, setCities] = useState(null);
-
-	useEffect(() => {
-		const getLocationApi = async () => {
-			try {
-				const response = await axios.get(`https://api.weatherapi.com/v1/search.json?key=131dcfb91d6d4b0da9d123040220511&q=Lon`);
-				setCities(response.data);
-			} catch (error) {
-				console.error(error);
-			}
-		};
-		setTimeout(getLocationApi, 1 * 1000);
-	}, []);
 
 	return (
 		<div className="App">
@@ -53,7 +37,7 @@ function App() {
 						</CitiesItem>
 					</CitiesList>
 					<Container>
-						<LocationSearch cities={cities} />
+						<LocationSearch />
 						<TemperatureButtons>
 							<Button content={"°C"} />
 							{"|"}
