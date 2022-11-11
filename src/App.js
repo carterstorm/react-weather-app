@@ -31,8 +31,7 @@ function App() {
 	const getSearchData = async () => {
 
 		try {
-			const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6`);
-
+			const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6&units=metric`);
 			const {
 				coord: { lon, lat },
 				main: { temp, temp_max, temp_min, feels_like, humidity, pressure },

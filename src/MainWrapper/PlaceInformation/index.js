@@ -12,7 +12,7 @@ export const PlaceWeatherInformation = ({ apiSearch }) => {
             <SkyInfo>{capitalizeFirstLetter(apiSearch.description)}</SkyInfo>
             <WeatherInformation>
                 <WeatherImage />
-                <WeatherTemperature>34°</WeatherTemperature>
+                <WeatherTemperature>{apiSearch.temp}</WeatherTemperature>
                 <WeatherBasicInformation />
             </WeatherInformation>
             <AdditionalWeatherInformation />
