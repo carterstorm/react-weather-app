@@ -7,10 +7,14 @@ import {
 } from "./styled";
 import { Button } from "../Button";
 import { useState } from "react";
+import { useApiSearch } from "../../useSearchApi";
 
 export const LocationSearch = () => {
 
     const [searchCity, setSearchCity] = useState("");
+
+    const apiSearch = useApiSearch();
+    console.log(apiSearch);
 
     return (
         <StyledLocationSearch>
