@@ -1,19 +1,77 @@
+import { useState } from "react";
+import axios from "axios";
+import searchImage from "../src/svg/search.svg";
+import locationImage from "../src/svg/location.svg";
 import { DateContainer } from "./MainWrapper/DateContainer";
-import { LocationSearch } from "./MainWrapper/LocationSearch";
-
-// import { Forecast } from "./MainWrapper/Forecast";
+import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
-// import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
+import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
 	CitiesItem,
 	CitiesList,
 	Container,
+	ContainerSearch,
 	Header,
+	Input,
 	MainWrapper,
+	StyledLocationSearch,
 	TemperatureButtons
 } from "./MainWrapper/styled";
 
 function App() {
+
+	const [searchCity, setSearchCity] = useState("");
+
+	const [apiSearch, setApiSearch] = useState({});
+
+	const getSearchData = async () => {
+
+		setApiSearch({});
+
+		try {
+			const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6`);
+
+			const {
+				coord: { lon, lat },
+				main: { temp, temp_max, temp_min, feels_like, humidity, pressure },
+				name,
+				sys: { country, sunrise, sunset },
+				weather,
+				wind: { speed },
+			} = response.data;
+
+			const { description, icon } = weather[0];
+
+			setApiSearch({
+				state: "success",
+				name,
+				lon,
+				lat,
+				temp,
+				temp_max,
+				temp_min,
+				feels_like,
+				humidity,
+				pressure,
+				country,
+				sunrise,
+				sunset,
+				speed,
+				description,
+				icon,
+			});
+
+		} catch {
+			setApiSearch({
+				state: "error",
+			});
+		}
+	};
+
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+		setTimeout(getSearchData, 2 * 1000);
+	};
 
 	return (
 		<div className="App">
@@ -37,7 +95,19 @@ function App() {
 						</CitiesItem>
 					</CitiesList>
 					<Container>
-						<LocationSearch />
+						<StyledLocationSearch onSubmit={onFormSubmit}>
+							<ContainerSearch>
+								<Input
+									placeholder="Wpisz szukane miasto"
+									value={searchCity}
+									onChange={({ target }) => setSearchCity(target.value)}
+								/>
+							</ContainerSearch>
+							<Button
+								img={searchImage} />
+							<Button
+								img={locationImage} />
+						</StyledLocationSearch>
 						<TemperatureButtons>
 							<Button content={"°C"} />
 							{"|"}
@@ -46,8 +116,8 @@ function App() {
 					</Container >
 					<DateContainer />
 				</Header>
-				{/* <PlaceWeatherInformation />
-				<Forecast /> */}
+				<PlaceWeatherInformation />
+				<Forecast />
 			</MainWrapper>
 		</div>
 	);
