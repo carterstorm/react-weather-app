@@ -17,16 +17,18 @@ import {
 	StyledLocationSearch,
 	TemperatureButtons
 } from "./MainWrapper/styled";
+import { Loading } from "./MainWrapper/Loading/styled";
+import { Failure } from "./MainWrapper/Failure/styled";
 
 function App() {
 
 	const [searchCity, setSearchCity] = useState("");
 
-	const [apiSearch, setApiSearch] = useState({});
+	const [apiSearch, setApiSearch] = useState({
+		state: "",
+	});
 
 	const getSearchData = async () => {
-
-		setApiSearch({});
 
 		try {
 			const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6`);
@@ -70,6 +72,9 @@ function App() {
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
+		setApiSearch({
+			state: "loading"
+		});
 		setTimeout(getSearchData, 2 * 1000);
 	};
 
@@ -116,8 +121,28 @@ function App() {
 					</Container >
 					<DateContainer />
 				</Header>
-				<PlaceWeatherInformation />
-				<Forecast />
+				{apiSearch.state === "" ? (
+					<>
+					</>
+				) :
+					apiSearch.state === "loading" ? (
+						<Loading>
+							Wczytuję dane
+						</Loading>
+					)
+						:
+						apiSearch.state === "error" ? (
+							<Failure>
+								Coś poszło chyba nie tak...
+							</Failure>
+						) :
+							(
+								<>
+									<PlaceWeatherInformation apiSearch={apiSearch} />
+									<Forecast />
+								</>
+							)
+				}
 			</MainWrapper>
 		</div>
 	);
