@@ -1,9 +1,9 @@
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
 
-import { Forecast } from "./MainWrapper/Forecast";
+// import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
-import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
+// import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
 	CitiesItem,
 	CitiesList,
@@ -46,8 +46,8 @@ function App() {
 					</Container >
 					<DateContainer />
 				</Header>
-				<PlaceWeatherInformation />
-				<Forecast />
+				{/* <PlaceWeatherInformation />
+				<Forecast /> */}
 			</MainWrapper>
 		</div>
 	);
