@@ -17,7 +17,7 @@ export const PlaceWeatherInformation = ({ apiSearch }) => {
                 <WeatherTemperature>{apiSearch.temp.toFixed(0)}</WeatherTemperature>
                 <WeatherBasicInformation apiSearch={apiSearch} />
             </WeatherInformation>
-            <AdditionalWeatherInformation />
+            <AdditionalWeatherInformation apiSearch={apiSearch} />
         </Wrapper>
     )
 };
