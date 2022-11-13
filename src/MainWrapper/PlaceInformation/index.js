@@ -6,8 +6,6 @@ export const PlaceWeatherInformation = ({ apiSearch }) => {
 
     const capitalizeFirstLetter = (item) => item.charAt(0).toUpperCase() + item.slice(1);
 
-    console.log(typeof apiSearch.temp)
-
     return (
         <Wrapper>
             <Place>{apiSearch.name} - {apiSearch.country}</Place>
