@@ -12,7 +12,7 @@ export const PlaceWeatherInformation = ({ apiSearch }) => {
             <SkyInfo>{capitalizeFirstLetter(apiSearch.description)}</SkyInfo>
             <WeatherInformation>
                 <WeatherImage />
-                <WeatherTemperature>{apiSearch.temp.toFixed(0)}</WeatherTemperature>
+                <WeatherTemperature>{apiSearch.temp.toFixed()}</WeatherTemperature>
                 <WeatherBasicInformation apiSearch={apiSearch} />
             </WeatherInformation>
             <AdditionalWeatherInformation apiSearch={apiSearch} />

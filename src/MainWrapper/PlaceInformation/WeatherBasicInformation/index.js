@@ -9,7 +9,7 @@ export const WeatherBasicInformation = ({ apiSearch }) => (
         <WeatherItem
             url={thermometer}
             text={"Odczuwalna temperatura:"}
-            data={apiSearch.feels_like.toFixed(0)}
+            data={apiSearch.feels_like.toFixed()}
         />
         <WeatherItem
             url={humidity_low}

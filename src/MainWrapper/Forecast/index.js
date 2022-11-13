@@ -4,7 +4,7 @@ import { ForecastItem } from "./ForecastItem";
 
 export const Forecast = () => (
     <Wrapper>
-        <Heading>hourly forecast</Heading>
+        <Heading>temperatura godzinowa</Heading>
         <ForecastContainer>
             <ForecastItem img={rainy}></ForecastItem>
         </ForecastContainer>

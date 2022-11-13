@@ -10,7 +10,7 @@ export const AdditionalWeatherInformation = ({ apiSearch }) => {
     const dateSunrise = new Date(apiSearch.sunrise * 1000);
     const dateSunset = new Date(apiSearch.sunset * 1000);
 
-    const getHoursAndMinutes = (item) => `${item.getHours()}:${item.getMinutes()} `;
+    const getHoursAndMinutes = (item) => `${item.getHours()}:${item.getMinutes()}`;
 
     return (
         <Wrapper>
