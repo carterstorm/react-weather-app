@@ -27,12 +27,12 @@ export const AdditionalWeatherInformation = ({ apiSearch }) => {
             <WeatherItem
                 url={max_temp}
                 text={"Max. temperatura:"}
-                data={"17"}
+                data={apiSearch.temp_max.toFixed()}
             />
             <WeatherItem
                 url={min_temp}
                 text={"Min. temperatura:"}
-                data={"2"}
+                data={apiSearch.temp_min.toFixed()}
             />
         </Wrapper>
     )
