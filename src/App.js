@@ -15,10 +15,12 @@ import {
 	Input,
 	MainWrapper,
 	StyledLocationSearch,
-	TemperatureButtons
+	TemperatureButtons,
+	CityText
 } from "./MainWrapper/styled";
 import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
+import { CityButton } from "./MainWrapper/CityButton";
 
 function App() {
 
@@ -31,7 +33,6 @@ function App() {
 	const [userCities, setUserCities] = useState([
 		"Londyn",
 		"Paryż",
-		"Kielce",
 		"Belgrad",
 		"Praga",
 	]);
@@ -91,7 +92,10 @@ function App() {
 				<Header>
 					<CitiesList>
 						{userCities.map(city => (
-							<CityItem key={city}>{city}</CityItem>
+							<CityItem key={city}>
+								<CityText>{city}</CityText>
+								<CityButton></CityButton>
+							</CityItem>
 						))}
 					</CitiesList>
 					<Container>

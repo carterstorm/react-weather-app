@@ -18,8 +18,18 @@ export const CitiesList = styled.ul`
 `;
 
 export const CityItem = styled.li`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 150px;
+    width: 100%;
     padding: 5px 10px;
 `;
+
+export const CityText = styled.p`
+    margin: 0;
+`;
+
 
 export const Container = styled.div`
     display: flex;
