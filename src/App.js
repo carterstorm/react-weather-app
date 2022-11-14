@@ -28,6 +28,14 @@ function App() {
 		state: "",
 	});
 
+	const [userCities, setUserCities] = useState([
+		"Londyn",
+		"Paryż",
+		"Kielce",
+		"Belgrad",
+		"Praga",
+	]);
+
 	const getSearchData = async () => {
 
 		try {
@@ -82,21 +90,9 @@ function App() {
 			<MainWrapper>
 				<Header>
 					<CitiesList>
-						<CitiesItem>
-							Londyn
-						</CitiesItem>
-						<CitiesItem>
-							Paryż
-						</CitiesItem>
-						<CitiesItem>
-							Warszawa
-						</CitiesItem>
-						<CitiesItem>
-							Belgrad
-						</CitiesItem>
-						<CitiesItem>
-							Praga
-						</CitiesItem>
+						{userCities.map(city => (
+							<CitiesItem key={city}>{city}</CitiesItem>
+						))}
 					</CitiesList>
 					<Container>
 						<StyledLocationSearch onSubmit={onFormSubmit}>
