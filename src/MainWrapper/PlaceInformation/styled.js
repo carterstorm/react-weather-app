@@ -12,7 +12,7 @@ export const Place = styled.p`
 
 export const SkyInfo = styled.p`
     font-size: 20px;
-    margin: 0 0 20px 0;
+    margin: 0;
 `;
 
 export const WeatherInformation = styled.div`
