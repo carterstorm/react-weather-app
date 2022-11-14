@@ -22,11 +22,9 @@ export const WeatherInformation = styled.div`
     justify-content: space-around;
 `;
 
-export const WeatherImage = styled.div`
+export const WeatherImage = styled.img`
     width: 100px;
     height: 100px;
-    background-color: black;
-    border-radius: 50%;
 `;
 
 export const WeatherTemperature = styled.p`
