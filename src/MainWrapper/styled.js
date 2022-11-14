@@ -17,7 +17,7 @@ export const CitiesList = styled.ul`
     padding: 0;
 `;
 
-export const CitiesItem = styled.li`
+export const CityItem = styled.li`
     padding: 5px 10px;
 `;
 

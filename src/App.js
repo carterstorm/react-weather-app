@@ -7,7 +7,7 @@ import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
 import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
-	CitiesItem,
+	CityItem,
 	CitiesList,
 	Container,
 	ContainerSearch,
@@ -91,7 +91,7 @@ function App() {
 				<Header>
 					<CitiesList>
 						{userCities.map(city => (
-							<CitiesItem key={city}>{city}</CitiesItem>
+							<CityItem key={city}>{city}</CityItem>
 						))}
 					</CitiesList>
 					<Container>
