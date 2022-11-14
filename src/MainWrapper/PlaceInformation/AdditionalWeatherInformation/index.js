@@ -10,7 +10,20 @@ export const AdditionalWeatherInformation = ({ apiSearch }) => {
     const dateSunrise = new Date(apiSearch.sunrise * 1000);
     const dateSunset = new Date(apiSearch.sunset * 1000);
 
-    const getHoursAndMinutes = (item) => `${item.getHours()}:${item.getMinutes()}`;
+    const getHoursAndMinutes = (item) => {
+
+        const itemHour = item.getHours();
+        const itemMinute = item.getMinutes();
+
+        if (itemHour < 10 && itemMinute < 10) {
+            return `0${itemHour}:0${itemMinute}`
+        } else if (itemHour < 10) {
+            return `0${itemHour}:${itemMinute}`
+        } else if (itemMinute < 10) {
+            return `${itemHour}:0${itemMinute}`
+        }
+        return `${item.getHours()}:${item.getMinutes()}`
+    };
 
     return (
         <Wrapper>
