@@ -79,9 +79,10 @@ function App() {
 			...userCities,
 			{
 				id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-				name: searchCity,
+				inputName: searchCity,
+				name: apiSearch.name,
 			}
-		])
+		]);
 	};
 
 	const onFormSubmit = (event) => {
@@ -112,13 +113,17 @@ function App() {
 									value={searchCity}
 									onChange={({ target }) => setSearchCity(target.value)}
 								/>
-								<CityButton
-									type="button"
-									add
-									onClick={() => addCity(searchCity)}
-								>
-									+
-								</CityButton>
+								{apiSearch.state === "success" ? (
+									<CityButton
+										type="button"
+										add
+										onClick={() => addCity(searchCity)}
+									>
+										+
+									</CityButton>
+								) :
+									null
+								}
 							</ContainerSearch>
 							<Button
 								img={searchImage} />
