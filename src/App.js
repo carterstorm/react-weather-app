@@ -16,11 +16,12 @@ import {
 	MainWrapper,
 	StyledLocationSearch,
 	TemperatureButtons,
-	CityText
+	CityText,
+	CityButton,
+	DeleteSpan,
 } from "./MainWrapper/styled";
 import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
-import { CityButton } from "./MainWrapper/CityButton";
 
 function App() {
 
@@ -94,7 +95,7 @@ function App() {
 						{userCities.map(city => (
 							<CityItem key={city}>
 								<CityText>{city}</CityText>
-								<CityButton></CityButton>
+								<CityButton remove><DeleteSpan>-</DeleteSpan></CityButton>
 							</CityItem>
 						))}
 					</CitiesList>
@@ -106,6 +107,7 @@ function App() {
 									value={searchCity}
 									onChange={({ target }) => setSearchCity(target.value)}
 								/>
+								<CityButton add>+</CityButton>
 							</ContainerSearch>
 							<Button
 								img={searchImage} />
