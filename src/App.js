@@ -31,12 +31,7 @@ function App() {
 		state: "",
 	});
 
-	const [userCities, setUserCities] = useState([
-		"Londyn",
-		"Paryż",
-		"Belgrad",
-		"Praga",
-	]);
+	const [userCities, setUserCities] = useState([]);
 
 	const getSearchData = async () => {
 
@@ -79,6 +74,16 @@ function App() {
 		}
 	};
 
+	const addCity = (searchCity) => {
+		setUserCities(userCities => [
+			...userCities,
+			{
+				id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
+				name: searchCity,
+			}
+		])
+	};
+
 	const onFormSubmit = (event) => {
 		event.preventDefault();
 		setApiSearch({
@@ -93,8 +98,8 @@ function App() {
 				<Header>
 					<CitiesList>
 						{userCities.map(city => (
-							<CityItem key={city}>
-								<CityText>{city}</CityText>
+							<CityItem key={city.id}>
+								<CityText>{city.name}</CityText>
 								<CityButton remove><DeleteSpan>-</DeleteSpan></CityButton>
 							</CityItem>
 						))}
@@ -107,7 +112,13 @@ function App() {
 									value={searchCity}
 									onChange={({ target }) => setSearchCity(target.value)}
 								/>
-								<CityButton type="button" add>+</CityButton>
+								<CityButton
+									type="button"
+									add
+									onClick={() => addCity(searchCity)}
+								>
+									+
+								</CityButton>
 							</ContainerSearch>
 							<Button
 								img={searchImage} />

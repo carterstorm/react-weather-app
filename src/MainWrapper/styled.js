@@ -15,6 +15,7 @@ export const CitiesList = styled.ul`
     justify-content: flex-start;
     list-style: none;
     padding: 0;
+    height: 35px;
 `;
 
 export const CityItem = styled.li`
