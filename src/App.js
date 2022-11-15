@@ -107,7 +107,7 @@ function App() {
 									value={searchCity}
 									onChange={({ target }) => setSearchCity(target.value)}
 								/>
-								<CityButton add>+</CityButton>
+								<CityButton type="button" add>+</CityButton>
 							</ContainerSearch>
 							<Button
 								img={searchImage} />
