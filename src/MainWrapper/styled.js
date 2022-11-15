@@ -12,7 +12,7 @@ export const Header = styled.header`
 
 export const CitiesList = styled.ul`
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     list-style: none;
     padding: 0;
 `;
