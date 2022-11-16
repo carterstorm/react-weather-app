@@ -75,14 +75,21 @@ function App() {
 	};
 
 	const addCity = (searchCity) => {
-		setUserCities(userCities => [
-			...userCities,
-			{
-				id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-				inputName: searchCity,
-				name: apiSearch.name,
-			}
-		]);
+
+		if (userCities.some(({ inputName, name }) => inputName.toUpperCase() === searchCity.toUpperCase()
+			||
+			name.toUpperCase() === searchCity.toUpperCase())) {
+			return null;
+		} else {
+			setUserCities(userCities => [
+				...userCities,
+				{
+					id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
+					inputName: searchCity,
+					name: apiSearch.name,
+				}
+			]);
+		}
 	};
 
 	const onFormSubmit = (event) => {
