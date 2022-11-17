@@ -7,8 +7,6 @@ import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
 import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
-	CityItem,
-	CitiesList,
 	Container,
 	ContainerSearch,
 	Header,
@@ -16,12 +14,11 @@ import {
 	MainWrapper,
 	StyledLocationSearch,
 	TemperatureButtons,
-	CityText,
 	CityButton,
-	DeleteSpan,
 } from "./MainWrapper/styled";
 import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
+import { CitiesList } from "./MainWrapper/CitiesList";
 
 function App() {
 
@@ -104,14 +101,7 @@ function App() {
 		<div className="App">
 			<MainWrapper>
 				<Header>
-					<CitiesList>
-						{userCities.map(city => (
-							<CityItem key={city.id}>
-								<CityText>{city.name}</CityText>
-								<CityButton remove><DeleteSpan>-</DeleteSpan></CityButton>
-							</CityItem>
-						))}
-					</CitiesList>
+					<CitiesList userCities={userCities} />
 					<Container>
 						<StyledLocationSearch onSubmit={onFormSubmit}>
 							<ContainerSearch>
