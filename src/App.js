@@ -1,24 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
-import searchImage from "../src/svg/search.svg";
-import locationImage from "../src/svg/location.svg";
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { Forecast } from "./MainWrapper/Forecast";
 import { Button } from "./MainWrapper/Button";
 import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
 	Container,
-	ContainerSearch,
 	Header,
-	Input,
 	MainWrapper,
-	StyledLocationSearch,
 	TemperatureButtons,
-	CityButton,
 } from "./MainWrapper/styled";
 import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
+import { LocationSearch } from "./MainWrapper/LocationSearch";
 
 function App() {
 
@@ -71,24 +66,6 @@ function App() {
 		}
 	};
 
-	const addCity = (searchCity) => {
-
-		if (userCities.some(({ inputName, name }) => inputName.toUpperCase() === searchCity.toUpperCase()
-			||
-			name.toUpperCase() === searchCity.toUpperCase())) {
-			return null;
-		} else {
-			setUserCities(userCities => [
-				...userCities,
-				{
-					id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-					inputName: searchCity,
-					name: apiSearch.name,
-				}
-			]);
-		}
-	};
-
 	const onFormSubmit = (event) => {
 		event.preventDefault();
 		setApiSearch({
@@ -101,32 +78,18 @@ function App() {
 		<div className="App">
 			<MainWrapper>
 				<Header>
-					<CitiesList userCities={userCities} />
+					<CitiesList
+						userCities={userCities}
+					/>
 					<Container>
-						<StyledLocationSearch onSubmit={onFormSubmit}>
-							<ContainerSearch>
-								<Input
-									placeholder="Wpisz szukane miasto"
-									value={searchCity}
-									onChange={({ target }) => setSearchCity(target.value)}
-								/>
-								{apiSearch.state === "success" ? (
-									<CityButton
-										type="button"
-										add
-										onClick={() => addCity(searchCity)}
-									>
-										+
-									</CityButton>
-								) :
-									null
-								}
-							</ContainerSearch>
-							<Button
-								img={searchImage} />
-							<Button
-								img={locationImage} />
-						</StyledLocationSearch>
+						<LocationSearch
+							searchCity={searchCity}
+							setSearchCity={setSearchCity}
+							apiSearch={apiSearch}
+							userCities={userCities}
+							setUserCities={setUserCities}
+							onFormSubmit={onFormSubmit}
+						/>
 						<TemperatureButtons>
 							<Button content={"°C"} />
 							{"|"}
