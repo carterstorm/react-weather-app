@@ -6,8 +6,16 @@ export const Wrapper = styled.section`
     align-items: center;
 `;
 
+export const PlaceContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+`;
+
 export const Place = styled.p`
     font-size: 40px;
+    margin: 0 20px 0 0;
 `;
 
 export const SkyInfo = styled.p`
@@ -29,4 +37,20 @@ export const WeatherImage = styled.img`
 
 export const WeatherTemperature = styled.p`
     font-size: 40px;
+`;
+
+export const AddButton = styled.button`
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ececec;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 20px;
+
+    &:hover {
+        background-color: green;
+        color: white;
+    }
 `;

@@ -1,6 +1,5 @@
-import { CityButton } from "../styled";
 import { AdditionalWeatherInformation } from "./AdditionalWeatherInformation";
-import { Place, SkyInfo, WeatherImage, WeatherInformation, WeatherTemperature, Wrapper } from "./styled";
+import { AddButton, Place, PlaceContainer, SkyInfo, WeatherImage, WeatherInformation, WeatherTemperature, Wrapper } from "./styled";
 import { WeatherBasicInformation } from "./WeatherBasicInformation";
 
 export const PlaceWeatherInformation = ({ apiSearch, userCities, searchCity, setUserCities }) => {
@@ -29,20 +28,22 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, searchCity, set
 
     return (
         <Wrapper>
-            <Place>
-                {apiSearch.name} - {apiSearch.country}
+            <PlaceContainer>
+                <Place>
+                    {apiSearch.name} - {apiSearch.country}
+                </Place>
                 {apiSearch.state === "success" ? (
-                    <CityButton
+                    <AddButton
                         type="button"
                         add
                         onClick={() => addCity(searchCity)}
                     >
                         +
-                    </CityButton>
+                    </AddButton>
                 ) :
                     null
                 }
-            </Place>
+            </PlaceContainer>
             <SkyInfo>{capitalizeFirstLetter(apiSearch.description)}</SkyInfo>
             <WeatherInformation>
                 <WeatherImage src={`http://openweathermap.org/img/wn/${apiWeatherIcon}@2x.png`} />

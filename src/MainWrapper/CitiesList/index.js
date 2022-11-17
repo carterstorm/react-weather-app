@@ -1,5 +1,4 @@
-import { CityButton } from "../styled";
-import { CityItem, CityText, DeleteSpan, StyledCitiesList } from "./styled";
+import { CityItem, CityText, DeleteButton, DeleteSpan, StyledCitiesList } from "./styled";
 
 export const CitiesList = ({ userCities }) => {
     return (
@@ -7,9 +6,9 @@ export const CitiesList = ({ userCities }) => {
             {userCities.map(city => (
                 <CityItem key={city.id}>
                     <CityText>{city.name}</CityText>
-                    <CityButton remove>
+                    <DeleteButton remove>
                         <DeleteSpan>-</DeleteSpan>
-                    </CityButton>
+                    </DeleteButton>
                 </CityItem>
             ))}
         </StyledCitiesList>
