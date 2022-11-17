@@ -84,9 +84,6 @@ function App() {
 						<LocationSearch
 							searchCity={searchCity}
 							setSearchCity={setSearchCity}
-							apiSearch={apiSearch}
-							userCities={userCities}
-							setUserCities={setUserCities}
 							onFormSubmit={onFormSubmit}
 						/>
 						<TemperatureButtons />
@@ -110,7 +107,12 @@ function App() {
 						) :
 							(
 								<>
-									<PlaceWeatherInformation apiSearch={apiSearch} />
+									<PlaceWeatherInformation
+										apiSearch={apiSearch}
+										userCities={userCities}
+										searchCity={searchCity}
+										setUserCities={setUserCities}
+									/>
 									<Forecast />
 								</>
 							)

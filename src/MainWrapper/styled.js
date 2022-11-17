@@ -27,14 +27,6 @@ export const CityButton = styled.button`
     transition: .2s;
 
     ${({ add }) => add && css`
-
-            position: absolute;
-            right: 15px;
-            top: 5px;
-            z-index: 1;
-            width: 20px;
-            height: 20px;
-
         &:hover {
             background-color: green;
             color: white;
