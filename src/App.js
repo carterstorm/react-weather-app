@@ -2,18 +2,17 @@ import { useState } from "react";
 import axios from "axios";
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { Forecast } from "./MainWrapper/Forecast";
-import { Button } from "./MainWrapper/Button";
 import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
 import {
 	Container,
 	Header,
 	MainWrapper,
-	TemperatureButtons,
 } from "./MainWrapper/styled";
 import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
+import { TemperatureButtons } from "./MainWrapper/TemperatureButtons";
 
 function App() {
 
@@ -90,11 +89,7 @@ function App() {
 							setUserCities={setUserCities}
 							onFormSubmit={onFormSubmit}
 						/>
-						<TemperatureButtons>
-							<Button content={"°C"} />
-							{"|"}
-							<Button content={"°F"} />
-						</TemperatureButtons>
+						<TemperatureButtons />
 					</Container >
 					<DateContainer />
 				</Header>

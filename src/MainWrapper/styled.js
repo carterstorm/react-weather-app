@@ -15,11 +15,6 @@ export const Container = styled.div`
     justify-content: space-between;
 `;
 
-export const TemperatureButtons = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
 export const CityButton = styled.button`
     position: relative;
     padding: 0;
