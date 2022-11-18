@@ -29,18 +29,14 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
                 <Place>
                     {apiSearch.name} - {apiSearch.country}
                 </Place>
-                {apiSearch.state === "success" ? (
-                    <AddButton
-                        type="button"
-                        add
-                        showValue={showValue}
-                        onClick={() => addCity()}
-                    >
-                        +
-                    </AddButton>
-                ) :
-                    null
-                }
+                <AddButton
+                    type="button"
+                    add
+                    showValue={showValue}
+                    onClick={() => addCity()}
+                >
+                    +
+                </AddButton>
             </PlaceContainer>
             <SkyInfo>{capitalizeFirstLetter(apiSearch.description)}</SkyInfo>
             <WeatherInformation>
