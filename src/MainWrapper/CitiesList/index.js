@@ -6,7 +6,7 @@ export const CitiesList = ({ userCities }) => {
             {userCities.map(city => (
                 <CityItem key={city.id}>
                     <CityText>{city.name}</CityText>
-                    <DeleteButton remove>
+                    <DeleteButton>
                         <DeleteSpan>-</DeleteSpan>
                     </DeleteButton>
                 </CityItem>
