@@ -31,7 +31,6 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
                 </Place>
                 <AddButton
                     type="button"
-                    add
                     showValue={showValue}
                     onClick={() => addCity()}
                 >
