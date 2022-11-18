@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { Forecast } from "./MainWrapper/Forecast";
@@ -23,6 +23,18 @@ function App() {
 	});
 
 	const [userCities, setUserCities] = useState([]);
+
+	const [showValue, setShowValue] = useState(false);
+
+	useEffect(() => {
+		if (userCities && apiSearch.name) {
+			if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
+				setShowValue(true);
+			} else {
+				setShowValue(false);
+			}
+		}
+	}, [userCities, apiSearch]);
 
 	const getSearchData = async () => {
 
@@ -111,6 +123,7 @@ function App() {
 										apiSearch={apiSearch}
 										userCities={userCities}
 										setUserCities={setUserCities}
+										showValue={showValue}
 									/>
 									<Forecast />
 								</>

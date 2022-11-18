@@ -2,7 +2,7 @@ import { AdditionalWeatherInformation } from "./AdditionalWeatherInformation";
 import { AddButton, Place, PlaceContainer, SkyInfo, WeatherImage, WeatherInformation, WeatherTemperature, Wrapper } from "./styled";
 import { WeatherBasicInformation } from "./WeatherBasicInformation";
 
-export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities }) => {
+export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, showValue }) => {
 
     const capitalizeFirstLetter = (item) => item.charAt(0).toUpperCase() + item.slice(1);
 
@@ -33,6 +33,7 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities }
                     <AddButton
                         type="button"
                         add
+                        showValue={showValue}
                         onClick={() => addCity()}
                     >
                         +
