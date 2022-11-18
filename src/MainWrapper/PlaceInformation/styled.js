@@ -7,6 +7,7 @@ export const Wrapper = styled.section`
 `;
 
 export const PlaceContainer = styled.div`
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,6 +41,10 @@ export const WeatherTemperature = styled.p`
 `;
 
 export const AddButton = styled.button`
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
     width: 40px;
     height: 40px;
     border: none;
