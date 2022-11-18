@@ -91,6 +91,7 @@ function App() {
 				<Header>
 					<CitiesList
 						userCities={userCities}
+						setUserCities={setUserCities}
 					/>
 					<Container>
 						<LocationSearch
