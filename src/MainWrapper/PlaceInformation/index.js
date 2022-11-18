@@ -8,19 +8,35 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
 
     const apiWeatherIcon = apiSearch.icon;
 
-    const addCity = () => {
+    const deleteFirstUserCity = userCities.filter((userCity, index) => {
+        const removeIndex = 0;
+        return userCities[removeIndex] !== userCities[index];
+    });
 
+    const addCity = () => {
         if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
             return null;
         } else {
-            setUserCities(userCities => [
-                ...userCities,
-                {
-                    id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-                    name: apiSearch.name,
-                }
-            ]);
-        }
+
+            if (userCities.length < 5) {
+                setUserCities(userCities => [
+                    ...userCities,
+                    {
+                        id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
+                        name: apiSearch.name,
+                    }
+                ]);
+            } else {
+                setUserCities(deleteFirstUserCity);
+                setUserCities(userCities => [
+                    ...userCities,
+                    {
+                        id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
+                        name: apiSearch.name,
+                    }
+                ]);
+            };
+        };
     };
 
     return (
