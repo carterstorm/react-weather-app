@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.section`
     display: flex;
@@ -48,6 +48,10 @@ export const AddButton = styled.button`
     cursor: pointer;
     transition: .2s;
     font-size: 20px;
+
+    ${({ showValue }) => showValue && css`
+        display: none;
+    `}
 
     &:hover {
         background-color: green;

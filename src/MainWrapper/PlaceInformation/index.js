@@ -2,24 +2,21 @@ import { AdditionalWeatherInformation } from "./AdditionalWeatherInformation";
 import { AddButton, Place, PlaceContainer, SkyInfo, WeatherImage, WeatherInformation, WeatherTemperature, Wrapper } from "./styled";
 import { WeatherBasicInformation } from "./WeatherBasicInformation";
 
-export const PlaceWeatherInformation = ({ apiSearch, userCities, searchCity, setUserCities }) => {
+export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities }) => {
 
     const capitalizeFirstLetter = (item) => item.charAt(0).toUpperCase() + item.slice(1);
 
     const apiWeatherIcon = apiSearch.icon;
 
-    const addCity = (searchCity) => {
+    const addCity = () => {
 
-        if (userCities.some(({ inputName, name }) => inputName.toUpperCase() === searchCity.toUpperCase()
-            ||
-            name.toUpperCase() === searchCity.toUpperCase())) {
+        if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
             return null;
         } else {
             setUserCities(userCities => [
                 ...userCities,
                 {
                     id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-                    inputName: searchCity,
                     name: apiSearch.name,
                 }
             ]);
@@ -36,7 +33,7 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, searchCity, set
                     <AddButton
                         type="button"
                         add
-                        onClick={() => addCity(searchCity)}
+                        onClick={() => addCity()}
                     >
                         +
                     </AddButton>

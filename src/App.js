@@ -110,7 +110,6 @@ function App() {
 									<PlaceWeatherInformation
 										apiSearch={apiSearch}
 										userCities={userCities}
-										searchCity={searchCity}
 										setUserCities={setUserCities}
 									/>
 									<Forecast />
