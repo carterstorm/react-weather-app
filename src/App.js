@@ -29,9 +29,9 @@ function App() {
 		if (userCities && apiSearch.name) {
 			if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
 				setShowValue(true);
-			} else {
-				setShowValue(false);
 			}
+
+			return setShowValue(false);
 		}
 	}, [userCities, apiSearch]);
 
