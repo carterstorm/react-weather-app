@@ -12,7 +12,6 @@ import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
-import { TemperatureButtons } from "./MainWrapper/TemperatureButtons";
 
 function App() {
 
@@ -99,7 +98,6 @@ function App() {
 							setSearchCity={setSearchCity}
 							onFormSubmit={onFormSubmit}
 						/>
-						<TemperatureButtons />
 					</Container >
 					<DateContainer />
 				</Header>
