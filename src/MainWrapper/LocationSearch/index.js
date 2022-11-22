@@ -1,6 +1,5 @@
 import { ContainerSearch, Input, StyledLocationSearch } from "./styled";
 import searchImage from "../../svg/search.svg";
-import locationImage from "../../svg/location.svg";
 import { Button } from "../Button";
 
 export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity }) => (
@@ -14,7 +13,5 @@ export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity }) => (
         </ContainerSearch>
         <Button
             img={searchImage} />
-        <Button
-            img={locationImage} />
     </StyledLocationSearch>
 );
