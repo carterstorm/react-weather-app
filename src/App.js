@@ -25,6 +25,8 @@ function App() {
 
 	const [showValue, setShowValue] = useState(false);
 
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6&units=metric`;
+
 	useEffect(() => {
 		if (userCities && apiSearch.name) {
 			if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
@@ -38,7 +40,7 @@ function App() {
 	const getSearchData = async () => {
 
 		try {
-			const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6&units=metric`);
+			const response = await axios.get(url);
 			const {
 				coord: { lon, lat },
 				main: { temp, temp_max, temp_min, feels_like, humidity, pressure },
