@@ -4,26 +4,12 @@ import sunrise from "../../../svg/sunrise.svg";
 import sunset from "../../../svg/sunset.svg";
 import max_temp from "../../../svg/max_temp.svg";
 import min_temp from "../../../svg/min_temp.svg";
+import { getHoursAndMinutes } from "../../../getHoursAndMinutes";
 
 export const AdditionalWeatherInformation = ({ apiSearch }) => {
 
     const dateSunrise = new Date(apiSearch.sunrise * 1000);
     const dateSunset = new Date(apiSearch.sunset * 1000);
-
-    const getHoursAndMinutes = (item) => {
-
-        const itemHour = item.getHours();
-        const itemMinute = item.getMinutes();
-
-        if (itemHour < 10 && itemMinute < 10) {
-            return `0${itemHour}:0${itemMinute}`
-        } else if (itemHour < 10) {
-            return `0${itemHour}:${itemMinute}`
-        } else if (itemMinute < 10) {
-            return `${itemHour}:0${itemMinute}`
-        }
-        return `${item.getHours()}:${item.getMinutes()}`
-    };
 
     return (
         <Wrapper>
