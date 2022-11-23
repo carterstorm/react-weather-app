@@ -25,7 +25,7 @@ function App() {
 	useEffect(() => {
 		if (userCities && apiSearch.name) {
 			if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
-				setShowValue(true);
+				return setShowValue(true);
 			}
 			return setShowValue(false);
 		}
