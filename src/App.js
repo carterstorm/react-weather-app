@@ -55,10 +55,11 @@ function App() {
 						const data = [];
 
 						forecastData.filter((item, index) => {
-							const { dt, main } = forecastData[index];
+							const { dt, main, weather } = forecastData[index];
 							const { temp } = main;
+							const { icon } = weather[0];
 
-							return data.push({ dt, temp });
+							return data.push({ dt, temp, icon });
 						});
 
 						setApiSearch({
