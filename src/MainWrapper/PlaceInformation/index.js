@@ -11,7 +11,15 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
     const deleteFirstUserCity = userCities.filter((userCity, index) => {
         const removeIndex = 0;
         return userCities[removeIndex] !== userCities[index];
-    });
+    })
+
+    const setCity = (userCities) => [
+        ...userCities,
+        {
+            id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
+            name: apiSearch.name,
+        }
+    ];
 
     const addCity = () => {
         if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
@@ -19,22 +27,10 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
         } else {
 
             if (userCities.length < 5) {
-                setUserCities(userCities => [
-                    ...userCities,
-                    {
-                        id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-                        name: apiSearch.name,
-                    }
-                ]);
+                setUserCities(setCity);
             } else {
                 setUserCities(deleteFirstUserCity);
-                setUserCities(userCities => [
-                    ...userCities,
-                    {
-                        id: userCities.length === 0 ? 1 : userCities[userCities.length - 1].id + 1,
-                        name: apiSearch.name,
-                    }
-                ]);
+                setUserCities(setCity);
             };
         };
     };

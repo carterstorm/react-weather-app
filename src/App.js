@@ -86,8 +86,8 @@ function App() {
 			setApiSearch({
 				state: "error",
 			});
-		}
-	}
+		};
+	};
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
