@@ -56,7 +56,7 @@ export const PlaceWeatherInformation = ({ apiSearch, userCities, setUserCities, 
             <SkyInfo>{capitalizeFirstLetter(apiSearch.description)}</SkyInfo>
             <WeatherInformation>
                 <WeatherImage src={`http://openweathermap.org/img/wn/${apiWeatherIcon}@2x.png`} />
-                <WeatherTemperature>{apiSearch.temp.toFixed()}</WeatherTemperature>
+                <WeatherTemperature>{`${apiSearch.temp.toFixed()}°C`}</WeatherTemperature>
                 <WeatherBasicInformation apiSearch={apiSearch} />
             </WeatherInformation>
             <AdditionalWeatherInformation apiSearch={apiSearch} />
