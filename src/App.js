@@ -16,67 +16,78 @@ import { LocationSearch } from "./MainWrapper/LocationSearch";
 function App() {
 
 	const [searchCity, setSearchCity] = useState("");
-
 	const [apiSearch, setApiSearch] = useState({
 		state: "",
 	});
-
 	const [userCities, setUserCities] = useState([]);
-
 	const [showValue, setShowValue] = useState(false);
-
-	const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=b6e7b5d1fcedf9104ebd545f76f2ffd6&units=metric`;
 
 	useEffect(() => {
 		if (userCities && apiSearch.name) {
 			if (userCities.some(({ name }) => name.toUpperCase() === apiSearch.name.toUpperCase())) {
 				setShowValue(true);
 			}
-
 			return setShowValue(false);
 		}
 	}, [userCities, apiSearch]);
 
 	const getSearchData = async () => {
 
+		const API_KEY = `b6e7b5d1fcedf9104ebd545f76f2ffd6`;
+		const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${API_KEY}&units=metric`;
+
 		try {
-			const response = await axios.get(searchUrl);
-			const {
-				coord: { lon, lat },
-				main: { temp, temp_max, temp_min, feels_like, humidity, pressure },
-				name,
-				sys: { country, sunrise, sunset },
-				weather,
-				wind: { speed },
-			} = response.data;
+			await axios.get(searchUrl).then(async (response) => {
+				const {
+					coord: { lon, lat },
+					main: { temp, temp_max, temp_min, feels_like, humidity, pressure },
+					name,
+					sys: { country, sunrise, sunset },
+					weather,
+					wind: { speed },
+				} = response.data;
 
-			const { description, icon } = weather[0];
+				const { description, icon } = weather[0];
 
-			setApiSearch({
-				state: "success",
-				name,
-				lon,
-				lat,
-				temp,
-				temp_max,
-				temp_min,
-				feels_like,
-				humidity,
-				pressure,
-				country,
-				sunrise,
-				sunset,
-				speed,
-				description,
-				icon,
-			});
+				return axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
+					.then((response) => {
+						const forecastData = response.data.list.slice(0, 5);
+						const data = [];
 
+						forecastData.filter((item, index) => {
+							const { dt, main } = forecastData[index];
+							const { temp } = main;
+
+							return data.push({ dt, temp });
+						});
+
+						setApiSearch({
+							state: "success",
+							name,
+							lon,
+							lat,
+							temp,
+							temp_max,
+							temp_min,
+							feels_like,
+							humidity,
+							pressure,
+							country,
+							sunrise,
+							sunset,
+							speed,
+							description,
+							icon,
+							data: data,
+						});
+					})
+			})
 		} catch {
 			setApiSearch({
 				state: "error",
 			});
 		}
-	};
+	}
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
@@ -126,7 +137,7 @@ function App() {
 										setUserCities={setUserCities}
 										showValue={showValue}
 									/>
-									<Forecast />
+									<Forecast apiSearch={apiSearch} />
 								</>
 							)
 				}
