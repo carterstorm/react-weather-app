@@ -12,6 +12,7 @@ import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
+import { getHoursAndMinutes } from "./getHoursAndMinutes";
 
 function App() {
 
@@ -51,7 +52,7 @@ function App() {
 
 				return axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
 					.then((response) => {
-						const forecastData = response.data.list.slice(0, 5);
+						const forecastData = response.data.list.slice(0, 6);
 						const data = [];
 
 						forecastData.filter((item, index) => {
@@ -59,7 +60,10 @@ function App() {
 							const { temp } = main;
 							const { icon } = weather[0];
 
-							return data.push({ dt, temp, icon });
+							const time = new Date(dt * 1000);
+							const convertedTime = getHoursAndMinutes(time);
+
+							return data.push({ convertedTime, temp, icon });
 						});
 
 						setApiSearch({
