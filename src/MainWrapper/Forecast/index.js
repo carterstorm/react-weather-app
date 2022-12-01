@@ -7,11 +7,11 @@ export const Forecast = ({ apiSearch }) => {
         <Wrapper>
             <Heading>temperatura godzinowa</Heading>
             <ForecastContainer>
-                {apiSearch.data.map(({ convertedTime, temp, icon }) => (
+                {apiSearch.data.map(({ time, temp, icon }) => (
                     <ForecastItem
-                        key={convertedTime}
+                        key={time}
                         icon={icon}
-                        convertedTime={convertedTime}
+                        convertedTime={time}
                         temp={temp}
                     />
                 ))}

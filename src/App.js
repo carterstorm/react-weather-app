@@ -63,10 +63,8 @@ function App() {
 							const { temp } = main;
 							const { icon } = weather[0];
 
-							const time = new Date(dt * 1000);
-							const convertedTime = getHoursAndMinutes(time);
-
-							return data.push({ convertedTime, temp, icon });
+							const time = convertTime(dt);
+							return data.push({ time, temp, icon });
 						});
 
 						setApiSearch({
@@ -95,6 +93,10 @@ function App() {
 				state: "error",
 			});
 		};
+	};
+
+	const convertTime = (time) => {
+		return getHoursAndMinutes(new Date(time * 1000));
 	};
 
 	const onFormSubmit = (event) => {
