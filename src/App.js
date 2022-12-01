@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import { CitiesList } from "./MainWrapper/CitiesList";
+import { LocationSearch } from "./MainWrapper/LocationSearch";
+import { Loading } from "./MainWrapper/Loading";
+import { Failure } from "./MainWrapper/Failure";
 import { DateContainer } from "./MainWrapper/DateContainer";
 import { Forecast } from "./MainWrapper/Forecast";
 import { PlaceWeatherInformation } from "./MainWrapper/PlaceInformation";
+
+import { getHoursAndMinutes } from "./getHoursAndMinutes";
+
 import {
 	Container,
 	Header,
 	MainWrapper,
 } from "./MainWrapper/styled";
-import { CitiesList } from "./MainWrapper/CitiesList";
-import { LocationSearch } from "./MainWrapper/LocationSearch";
-import { getHoursAndMinutes } from "./getHoursAndMinutes";
-import { Loading } from "./MainWrapper/Loading";
-import { Failure } from "./MainWrapper/Failure";
 
 function App() {
 
