@@ -8,11 +8,11 @@ import {
 	Header,
 	MainWrapper,
 } from "./MainWrapper/styled";
-import { Loading } from "./MainWrapper/Loading/styled";
 import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
 import { getHoursAndMinutes } from "./getHoursAndMinutes";
+import { Loading } from "./MainWrapper/Loading";
 
 function App() {
 
@@ -99,7 +99,7 @@ function App() {
 		setApiSearch({
 			state: "loading"
 		});
-		setTimeout(getSearchData, 2 * 1000);
+		setTimeout(getSearchData, 3 * 1000);
 	};
 
 	return (
@@ -124,9 +124,7 @@ function App() {
 					</>
 				) :
 					apiSearch.state === "loading" ? (
-						<Loading>
-							Wczytuję dane
-						</Loading>
+						<Loading />
 					)
 						:
 						apiSearch.state === "error" ? (
