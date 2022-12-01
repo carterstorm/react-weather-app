@@ -8,11 +8,11 @@ import {
 	Header,
 	MainWrapper,
 } from "./MainWrapper/styled";
-import { Failure } from "./MainWrapper/Failure/styled";
 import { CitiesList } from "./MainWrapper/CitiesList";
 import { LocationSearch } from "./MainWrapper/LocationSearch";
 import { getHoursAndMinutes } from "./getHoursAndMinutes";
 import { Loading } from "./MainWrapper/Loading";
+import { Failure } from "./MainWrapper/Failure";
 
 function App() {
 
@@ -128,9 +128,7 @@ function App() {
 					)
 						:
 						apiSearch.state === "error" ? (
-							<Failure>
-								Coś poszło chyba nie tak...
-							</Failure>
+							<Failure />
 						) :
 							(
 								<>
