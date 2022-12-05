@@ -25,6 +25,7 @@ function App() {
 	});
 	const [userCities, setUserCities] = useState([]);
 	const [showValue, setShowValue] = useState(false);
+	const [units, setUnits] = useState("metric");
 
 	useEffect(() => {
 		if (userCities && apiSearch.name) {
@@ -38,7 +39,7 @@ function App() {
 	const getSearchData = async () => {
 
 		const API_KEY = `b6e7b5d1fcedf9104ebd545f76f2ffd6`;
-		const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${API_KEY}&units=metric`;
+		const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${API_KEY}&units=${units}`;
 
 		try {
 			await axios.get(searchUrl).then(async (response) => {
