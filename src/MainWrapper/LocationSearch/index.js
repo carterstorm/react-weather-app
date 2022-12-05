@@ -11,9 +11,9 @@ export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity }) => (
                 value={searchCity}
                 onChange={({ target }) => setSearchCity(target.value)}
             />
+            <Button
+                img={searchImage} />
         </ContainerSearch>
-        <Button
-            img={searchImage} />
         <TemperatureButtons />
     </StyledLocationSearch>
 );
