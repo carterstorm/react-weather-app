@@ -121,6 +121,8 @@ function App() {
 							searchCity={searchCity}
 							setSearchCity={setSearchCity}
 							onFormSubmit={onFormSubmit}
+							units={units}
+							setUnits={setUnits}
 						/>
 					</Container >
 					<DateContainer />

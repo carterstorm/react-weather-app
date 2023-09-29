@@ -3,7 +3,7 @@ import searchImage from "../../svg/search.svg";
 import { Button } from "../Button";
 import { TemperatureButtons } from "../TemperatureButtons";
 
-export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity }) => (
+export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity, units, setUnits }) => (
     <StyledLocationSearch onSubmit={onFormSubmit}>
         <ContainerSearch>
             <Input
@@ -14,6 +14,9 @@ export const LocationSearch = ({ searchCity, onFormSubmit, setSearchCity }) => (
             <Button
                 img={searchImage} />
         </ContainerSearch>
-        <TemperatureButtons />
+        <TemperatureButtons
+            units={units}
+            setUnits={setUnits}
+        />
     </StyledLocationSearch>
 );
