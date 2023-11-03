@@ -3,7 +3,6 @@ import { TemperatureButton, Wrapper } from "./styled";
 export const TemperatureButtons = ({ units, setUnits }) => {
 
     const getTempValue = () => {
-        console.log(units);
     };
 
     return (
