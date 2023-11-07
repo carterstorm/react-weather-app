@@ -24,21 +24,21 @@ There is no demo link for this project.
 
 ### Basic view
 
-![Basic view](https://github.com/carterstorm/react-weather-app/blob/main/images/basic_view.png?raw=true)
+![Basic view](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/basic_view.png?raw=true)
 
 ## Searching city
 
-![Searching city](https://github.com/carterstorm/react-weather-app/blob/main/images/searching_city.gif?raw=true)
+![Searching city](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/searching_city.gif?raw=true)
 
 ## Adding city to favorites
 
 Adding a city to your favorites. The city search is case-sensitive.
 
-![Adding city to favorites](https://github.com/carterstorm/react-weather-app/blob/main/images/adding_to_favorites.gif?raw=true)
+![Adding city to favorites](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/adding_to_favorites.gif?raw=true)
 
 ## Error page
 
-![Error page](https://github.com/carterstorm/react-weather-app/blob/main/images/error_page.gif?raw=true)
+![Error page](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/error_page.gif?raw=true)
 
 ## Getting Started
 
