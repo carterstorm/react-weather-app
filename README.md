@@ -28,13 +28,13 @@ There is no demo link for this project.
 
 ## Searching city
 
-![Searching city](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/searching_city.gif?raw=true)
+![Searching city](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/searching_city.png?raw=true)
 
 ## Adding city to favorites
 
 Adding a city to your favorites. The city search is case-sensitive.
 
-![Adding city to favorites](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/adding_to_favorites.gif?raw=true)
+![Adding city to favorites](https://github.com/carterstorm/react-weather-app/blob/newbranch/images/adding_to_favorites.png?raw=true)
 
 ## Error page
 
